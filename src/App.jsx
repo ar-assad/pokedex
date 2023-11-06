@@ -1,5 +1,7 @@
-function App() {
+import PokemonList from "./components/PokemonList";
 
+function App() {
+  return <PokemonList />;
 }
 
-export default App
+export default App;
