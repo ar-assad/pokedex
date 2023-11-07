@@ -30,7 +30,7 @@ export default function PokemonList() {
       <ul>
         {pokemonData.map((pokemon, index) => (
           <li key={index}>
-            <p>{pokemon.name}</p> <Sprite name={pokemon.name} />
+            <p>{pokemon.name}</p> <Sprite name={pokemon.name} url={pokemon.url} />
           </li>
         ))}
       </ul>
