@@ -27,7 +27,6 @@ export default function PokemonList() {
 
   return (
     <div>
-      <h1>PokéDex</h1>
       <ul>
         {pokemonData.map((pokemon, index) => (
           <li key={index}>
@@ -35,7 +34,7 @@ export default function PokemonList() {
           </li>
         ))}
       </ul>
-      <div>
+      <div className="buttons">
         {prevPage && (
           <button onClick={() => fetchMorePokemon(prevPage)}>Previous</button>
         )}
