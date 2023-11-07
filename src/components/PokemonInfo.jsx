@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import PokeCard from "./info_components/PokeCard";
+import Stats from "./info_components/Stats";
 
 export default function PokemonInfo() {
   const { name } = useParams();
@@ -25,5 +27,10 @@ export default function PokemonInfo() {
 
   if (error) return <p>Network error...</p>;
   if (isLoading) return <p>Loading...</p>;
-  return <h1>{data.id} {data.name}</h1>;
+  return (
+    <>
+      <PokeCard data={data}/>
+      <Stats data={data}/>
+    </>
+  );
 }
