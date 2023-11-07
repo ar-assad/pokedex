@@ -29,8 +29,8 @@ export default function PokemonList() {
   return (
     <div>
       <ul>
-        {pokemonData.map((pokemon, index) => (
-          <li key={index}>
+        {pokemonData.map((pokemon) => (
+          <li key={pokemon.name}>
             <Link to={`/pokemon/${pokemon.name}`} className="link">
               <p>{pokemon.name}</p>{" "}
               <Sprite name={pokemon.name} />
