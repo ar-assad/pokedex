@@ -11,6 +11,7 @@ function Loading() {
 export default function Sprite({ name }) {
   const [spriteUrl, setSpriteUrl] = useState("");
   const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   useEffect(() => {
     setLoading(true);
     async function fetchSprite() {
@@ -19,8 +20,8 @@ export default function Sprite({ name }) {
           `https://pokeapi.co/api/v2/pokemon/${name}`
         );
         setSpriteUrl(response.data.sprites.front_default);
-      } catch (error) {
-        console.error("Error fetching pokemon sprite: ", error);
+      } catch {
+        (error) => setError(error);
       } finally {
         setLoading(false);
       }
@@ -28,13 +29,9 @@ export default function Sprite({ name }) {
     fetchSprite();
   }, [name]);
 
-  if (isLoading) {
-    return <Loading />;
-  } else if (spriteUrl) {
-    return <img src={spriteUrl} className="sprite" alt={name} />;
-  } else {
-    return null;
-  }
+  if (error) return <p>Network error...</p>;
+  if (isLoading) return <Loading />
+  return <img src={spriteUrl} alt={name} className="sprite" />
 }
 
 Sprite.propTypes = {
