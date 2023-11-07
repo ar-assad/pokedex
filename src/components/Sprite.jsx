@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
 import axios from "axios";
 import "./Sprite.css";
 import loadingGif from "../assets/loading.gif";
@@ -35,3 +36,7 @@ export default function Sprite({ name }) {
     return null;
   }
 }
+
+Sprite.propTypes = {
+  name: PropTypes.string.isRequired,
+};
