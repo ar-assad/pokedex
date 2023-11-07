@@ -5,7 +5,8 @@ ul {
   gap: 4px;
 }
 
-li {
+.link {
+  color: #213547;
   border: 2px solid #213547;
   border-radius: 5px;
   display: flex;
