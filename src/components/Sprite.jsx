@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import axios from "axios";
 import "./Sprite.css";
 import loadingGif from "../assets/loading.gif";
@@ -8,7 +8,7 @@ function Loading() {
   return <img src={loadingGif} alt="loading" />;
 }
 
-export default function Sprite({ name, url }) {
+export default function Sprite({ name }) {
   const [spriteUrl, setSpriteUrl] = useState("");
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -16,7 +16,9 @@ export default function Sprite({ name, url }) {
     setLoading(true);
     async function fetchSprite() {
       try {
-        const response = await axios.get(url);
+        const response = await axios.get(
+          `https://pokeapi.co/api/v2/pokemon/${name}`
+        );
         setSpriteUrl(response.data.sprites.front_default);
       } catch {
         (error) => setError(error);
@@ -25,14 +27,13 @@ export default function Sprite({ name, url }) {
       }
     }
     fetchSprite();
-  }, [url]);
+  }, [name]);
 
   if (error) return <p>Network error...</p>;
-  if (isLoading) return <Loading />;
-  return <img src={spriteUrl} alt={name} className="sprite" />;
+  if (isLoading) return <Loading />
+  return <img src={spriteUrl} alt={name} className="sprite" />
 }
 
 Sprite.propTypes = {
-  url: PropTypes.string.isRequired,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
 };
