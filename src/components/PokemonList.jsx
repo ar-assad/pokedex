@@ -33,7 +33,7 @@ export default function PokemonList() {
           <li key={pokemon.name}>
             <Link to={`/pokemon/${pokemon.name}`} className="link">
               <p>{pokemon.name}</p>{" "}
-              <Sprite name={pokemon.name} />
+              <Sprite name={pokemon.name} url={pokemon.url} />
             </Link>
           </li>
         ))}
