@@ -14,6 +14,8 @@
 .card button {
   padding: 3px;
   font-size: 0.8rem;
+  min-width: 28px;
+  border-radius: 100%;
 }
 
 .sprite-container {
@@ -42,13 +44,19 @@
 
 .sprite-buttons {
   display: flex;
+  gap: 2px;
 }
 
 .type-container {
   display: flex;
+  gap: 4px;
   width: 100%;
 }
 
 .symbols {
   color: #a090d8;
+}
+
+.name {
+  text-transform: uppercase;
 }

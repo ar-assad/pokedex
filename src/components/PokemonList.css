@@ -1,4 +1,4 @@
-ul {
+.pokemon-list ul {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -15,7 +15,7 @@ ul {
   justify-content: center;
 }
 
-p {
+.pokemon-list p {
   text-transform: capitalize;
   margin-left: 10px;
 }
