@@ -1,0 +1,33 @@
+.info {
+  font-size: 30px;
+  height: 90vh;
+  display: grid;
+  grid-template: 3em auto / 1fr 2.5fr;
+  grid-template-areas:
+    "header header"
+    "card stats";
+}
+.header > h1 {
+  font-size: 2rem;
+}
+.header > a {
+  color: inherit;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e7ff91;
+  padding: 16px;
+  border-bottom: 4px solid #beb65c;
+}
+
+.card {
+  grid-area: card;
+}
+
+.stats {
+  grid-area: stats;
+}

@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 import Sprite from "../Sprite";
 import { useState } from "react";
+import "./PokeCard.css";
+import "./Types.css";
 
 export default function PokeCard({ data }) {
   const [spriteUrl, setSpriteUrl] = useState(data.sprites.front_default);
-  console.log(spriteUrl);
   const spriteUrls = {
-    "*": data.sprites.front_shiny,
+    O: data.sprites.front_default,
+    S: data.sprites.front_shiny,
     I: data.sprites.versions["generation-i"]["red-blue"].front_default,
     II: data.sprites.versions["generation-ii"].crystal.front_default,
     III: data.sprites.versions["generation-iii"].emerald.front_default,
@@ -16,16 +18,18 @@ export default function PokeCard({ data }) {
     VI: data.sprites.versions["generation-vi"]["x-y"].front_default,
     VII: data.sprites.versions["generation-vii"]["ultra-sun-ultra-moon"]
       .front_default,
-    O: data.sprites.other["official-artwork"].front_default,
   };
 
   return (
-    <div className="card-container">
+    <div className="card">
       <div className="top-bar">
-        <p className="dexNo((">No. {data.id}</p>
+        <p className="dexNo">No. {data.id}</p>
+        <p className="symbols">●■▲♥</p>
       </div>
-      <Sprite name={data.name} url={spriteUrl} />
-      <ul>
+      <div className="sprite-container">
+        <Sprite name={data.name} url={spriteUrl} />
+      </div>
+      <ul className="sprite-buttons">
         {Object.entries(spriteUrls).map(
           ([version, url], index) =>
             url && (
@@ -36,9 +40,9 @@ export default function PokeCard({ data }) {
         )}
       </ul>
       <p className="name">{data.name}</p>
-      <ul>
+      <ul className="type-container">
         {data.types.map((item, index) => (
-          <li key={index} className={item.type.name}>
+          <li key={index} className={`${item.type.name} type`}>
             {item.type.name}
           </li>
         ))}
