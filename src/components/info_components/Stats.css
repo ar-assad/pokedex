@@ -1,0 +1,122 @@
+.stats-container {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  background-color: #277077;
+  padding: 16px;
+  margin-top: 10px;
+}
+
+.stats-container div > p {
+  font-size: 0.8em;
+  color: white;
+}
+
+.abilities {
+  display: flex;
+  flex-direction: column;
+}
+
+.abilities ul {
+  display: flex;
+  gap: 4px;
+  justify-content: space-around;
+}
+
+.abilities li {
+  background-color: #f0f9e8;
+  width: 100%;
+  border: 2px solid #77bc82;
+  border-radius: 8px;
+}
+
+.abilities .hidden {
+  border: 2px dotted #77bc82;
+}
+
+.battle-stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.battle-stats ul {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "hp spAtk"
+    "attack spDef"
+    "defense speed";
+  border-radius: 10px;
+  border: 2px solid #77bc82;
+  background-color: #f0f9e8;
+  padding: 10px;
+  background: linear-gradient(
+    to right,
+    #78e0a2 0%,
+    #78e0a2 25%,
+    #f0f9e8 25%,
+    #f0f9e8 50%,
+    #78e0a2 50%,
+    #78e0a2 75%,
+    #f0f9e8 75%,
+    #f0f9e8 100%
+  );
+}
+
+.battle-stats li {
+  margin: 0px 10px;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.hp {
+  grid-area: hp;
+}
+
+.special-attack {
+  grid-area: spAtk;
+}
+
+.attack {
+  grid-area: attack;
+}
+
+.defense {
+  grid-area: defense;
+}
+
+.special-defense {
+  grid-area: spDef;
+}
+
+.index {
+  display: flex;
+  flex-direction: column;
+}
+
+.index ul {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid #77bc82;
+  background-color: #f0f9e8;
+  padding: 10px;
+  background: linear-gradient(
+    to right,
+    #78e0a2 0%,
+    #78e0a2 50%,
+    #f0f9e8 50%,
+    #f0f9e8 100%
+  );
+}
+
+.index li {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stats-container p {
+  align-self: flex-start;
+}
