@@ -1,3 +1,13 @@
+body {
+  background-color: #6a5e4e;
+}
+
+.pokedex-header {
+  width: 100%;
+  background-color: #e7ff91;
+  border-bottom: 4px solid #beb65c;
+}
+
 .pokemon-list ul {
   list-style: none;
   display: grid;

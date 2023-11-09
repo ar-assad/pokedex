@@ -3,7 +3,7 @@ import PokemonList from "./components/PokemonList";
 function App() {
   return (
     <>
-      <h1>PokéDex</h1>
+      <h1 className="pokedex-header">PokéDex</h1>
       <PokemonList />
     </>
   );
