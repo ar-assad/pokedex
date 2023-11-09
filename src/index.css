@@ -27,7 +27,7 @@
 #root {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 6px;
   justify-content: space-between;
   margin: 0 auto;
   width: 80vw;
