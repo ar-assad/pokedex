@@ -31,3 +31,15 @@
 .stats {
   grid-area: stats;
 }
+
+@media only screen and (max-width: 600px) {
+  .info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  .card {
+    border-radius: 10px;
+  }
+}
