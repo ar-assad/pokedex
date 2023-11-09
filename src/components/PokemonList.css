@@ -1,5 +1,8 @@
 body {
-  background-color: #6a5e4e;
+  background-image: url("../assets/background.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .pokedex-header {
