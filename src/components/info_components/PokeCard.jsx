@@ -3,6 +3,7 @@ import Sprite from "../Sprite";
 import { useState } from "react";
 import "./PokeCard.css";
 import "./Types.css";
+import symbols from "../../assets/symbols.png";
 
 export default function PokeCard({ data }) {
   const [spriteUrl, setSpriteUrl] = useState(data.sprites.front_default);
@@ -24,7 +25,7 @@ export default function PokeCard({ data }) {
     <div className="card">
       <div className="top-bar">
         <p className="dexNo">No. {data.id}</p>
-        <p className="symbols">●■▲♥</p>
+        <img src={symbols} className="symbols"/>
       </div>
       <div className="sprite-container">
         <Sprite name={data.name} url={spriteUrl} />

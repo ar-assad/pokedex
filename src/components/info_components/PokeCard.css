@@ -54,7 +54,9 @@
 }
 
 .symbols {
-  color: #a090d8;
+  min-height: 32px;
+  align-self: center;
+  filter: invert(76%) sepia(57%) saturate(5924%) hue-rotate(228deg) brightness(92%) contrast(85%);
 }
 
 .name {
