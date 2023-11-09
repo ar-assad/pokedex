@@ -39,7 +39,20 @@
     flex-direction: column;
   }
 
+  .header > h1 {
+    font-size: 1.5rem;
+  }
+
   .card {
     border-radius: 10px;
+  }
+
+  .battle-stats ul {
+    background: none;
+    background-color: #f0f9e8;
+  }
+
+  .battle-stats li {
+    margin: 0;
   }
 }
