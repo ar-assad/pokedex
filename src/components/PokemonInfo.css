@@ -13,6 +13,9 @@
 .header > a {
   color: inherit;
 }
+.header > a:hover {
+  color: #ff7474;
+}
 
 .header {
   grid-area: header;
